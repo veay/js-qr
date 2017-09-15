@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>basic example</title>
+</head>
+<body>
+
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.qrcode.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
+
+<input type="text"  value="" id="url" onp/><input type="button" onclick="generalQr()" value="生成二维码">
+<p>Render in table</p>
+<div id="qrcodeTable"></div>
+<p>Render in canvas</p> 
+<div id="qrcodeCanvas"></div>
+<script type="text/javascript">
+
+	function generalQr(){
+		var url = $("#url").val();
+		if(url!=null && url!='' && typeof (url)!='undefined'){
+			$('#qrcodeTable').qrcode({
+				render	: "table",
+				text	: url
+			});	
+
+			$('#qrcodeCanvas').qrcode({
+				text	: url
+			});	
+		}
+	};
+	
+</script>
+
+</body>
+</html>
